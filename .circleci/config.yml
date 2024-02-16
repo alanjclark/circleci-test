@@ -15,7 +15,7 @@ jobs:
       - macos/preboot-simulator:
           device: "iPhone SE (3rd generation)"
           platform: "iOS"
-          version: "17.2"
+          version: "16.4"
       - checkout
       - run:
           name: build_and_test
