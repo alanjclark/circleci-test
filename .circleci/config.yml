@@ -10,7 +10,7 @@ jobs:
         type: integer
     macos:
       xcode: "15.2.0"
-    resource_class: macos.m1.medium.gen1
+    resource_class: macos.m1.large.gen1
     steps:
       - macos/preboot-simulator:
           device: "iPhone SE (3rd generation)"
