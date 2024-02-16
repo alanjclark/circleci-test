@@ -20,7 +20,7 @@ jobs:
       - macos/wait-until-simulator-booted
       - run:
           name: Simulator UDID
-          command: echo ${DEVICE_UDID}
+          command: echo "${DEVICE_UDID}"
       - run:
           name: build_and_test
           command: |
