@@ -12,7 +12,10 @@ jobs:
       xcode: "15.2.0"
     resource_class: macos.m1.medium.gen1
     steps:
-      - macos/preboot-simulator
+      - macos/preboot-simulator:
+          device: "iPhone 15"
+          platform: "iOS"
+          version: "17.2"
       - checkout
       - run:
           name: build_and_test
