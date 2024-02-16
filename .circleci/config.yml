@@ -13,7 +13,7 @@ jobs:
     resource_class: macos.m1.medium.gen1
     steps:
       - macos/preboot-simulator:
-          device: "iPhone 15"
+          device: "iPhone SE (3rd generation)"
           platform: "iOS"
           version: "17.2"
       - checkout
