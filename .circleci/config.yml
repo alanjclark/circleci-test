@@ -14,7 +14,7 @@ jobs:
     steps:
       - macos/preboot-simulator:
           device: "iPhone SE (3rd generation)"
-          platform: "iOS Simulator"
+          platform: "iOS"
           version: "17.2"
       - checkout
       - run:
@@ -24,7 +24,7 @@ jobs:
               -scheme CircleCITest \
               -sdk iphonesimulator \
               -derivedDataPath ".build" \
-              -destination "platform=iOS Simulator,OS=17.2,name=iPhone SE (3rd generation)" \
+              -destination "platform=iOS,OS=17.2,name=iPhone SE (3rd generation)" \
               test
       - run:
           name: Zip test results
