@@ -5,9 +5,9 @@ orbs:
 
 jobs:
   build:
-    # parameters:
-    #   runs:
-    #     type: integer
+    parameters:
+      runs:
+        type: integer
     macos:
       xcode: "15.2.0"
     resource_class: macos.m1.large.gen1
@@ -56,15 +56,15 @@ workflows:
           filters:
             branches:
               ignore: master
-          # matrix:
-          #   parameters:
-          #     runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+          matrix:
+            parameters:
+              runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
   master:
     jobs:
       - build:
           filters:
             branches:
               only: master
-          # matrix:
-          #   parameters:
-          #     runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+          matrix:
+            parameters:
+              runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
