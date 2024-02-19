@@ -5,11 +5,11 @@ orbs:
 
 jobs:
   build:
-    parameters:
-      runs:
-        type: integer
+    # parameters:
+    #   runs:
+    #     type: integer
     macos:
-      xcode: "15.3.0"
+      xcode: "15.2.0"
     resource_class: macos.m1.large.gen1
     steps:
       - macos/preboot-simulator:
@@ -17,6 +17,16 @@ jobs:
           platform: "iOS"
           version: "17.4"
       - checkout
+      - run:
+          name: trying fix 1
+          command: |
+            cd ~/Library/Developer/Xcode/UserData/Previews/Simulator\ Devices/
+            find . -name com.apple.suggestions.plist -exec plutil -replace SuggestionsAppLibraryEnabled -bool NO {} ";" 
+      - run:
+          name: trying fix 2
+          command: |
+            cd ~/Library/Developer/CoreSimulator/Devices 
+            find . -name com.apple.suggestions.plist -exec plutil -replace SuggestionsAppLibraryEnabled -bool NO {} ";" 
       - macos/wait-until-simulator-booted
       - run:
           name: Simulator UDID
@@ -51,15 +61,15 @@ workflows:
           filters:
             branches:
               ignore: master
-          matrix:
-            parameters:
-              runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+          # matrix:
+          #   parameters:
+          #     runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
   master:
     jobs:
       - build:
           filters:
             branches:
               only: master
-          matrix:
-            parameters:
-              runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+          # matrix:
+          #   parameters:
+          #     runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
