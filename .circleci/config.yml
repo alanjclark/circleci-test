@@ -5,9 +5,9 @@ orbs:
 
 jobs:
   build:
-    parameters:
-      runs:
-        type: integer
+    # parameters:
+    #   runs:
+    #     type: integer
     macos:
       xcode: "15.0.0"
     resource_class: macos.m1.large.gen1
@@ -15,7 +15,7 @@ jobs:
       - macos/preboot-simulator:
           device: "iPhone SE (3rd generation)"
           platform: "iOS"
-          version: "17.0"
+          version: "16.4"
       - macos/add-uitest-permissions
       - checkout
       - run:
@@ -34,7 +34,7 @@ jobs:
               -scheme CircleCITest \
               -sdk iphonesimulator \
               -derivedDataPath ".build" \
-              -destination "platform=iOS Simulator,OS=17.0,name=iPhone SE (3rd generation)" \
+              -destination "platform=iOS Simulator,OS=16.4,name=iPhone SE (3rd generation)" \
               test
       - run:
           name: Zip test results
@@ -57,15 +57,15 @@ workflows:
           filters:
             branches:
               ignore: master
-          matrix:
-            parameters:
-              runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+          # matrix:
+          #   parameters:
+          #     runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
   master:
     jobs:
       - build:
           filters:
             branches:
               only: master
-          matrix:
-            parameters:
-              runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+          # matrix:
+          #   parameters:
+          #     runs: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
