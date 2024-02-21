@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61C6E5EA2B8603FB00178523 /* CircleCITest.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CircleCITest.xctestplan; sourceTree = "<group>"; };
 		A7F5477E2B7E477100E01FDC /* CircleCITest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleCITest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7F547812B7E477100E01FDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7F547832B7E477100E01FDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		A7F547752B7E477100E01FDC = {
 			isa = PBXGroup;
 			children = (
+				61C6E5EA2B8603FB00178523 /* CircleCITest.xctestplan */,
 				A7F547802B7E477100E01FDC /* CircleCITest */,
 				A7F547A12B7E477400E01FDC /* CircleCITestUITests */,
 				A7F5477F2B7E477100E01FDC /* Products */,
