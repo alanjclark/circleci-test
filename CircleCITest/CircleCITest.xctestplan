@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "BC845226-43EA-4E31-9A8E-DD4C009601B5",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:CircleCITest.xcodeproj",
+      "identifier" : "A7F5477D2B7E477100E01FDC",
+      "name" : "CircleCITest"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:CircleCITest.xcodeproj",
+        "identifier" : "A7F5479D2B7E477400E01FDC",
+        "name" : "CircleCITestUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
