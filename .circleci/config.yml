@@ -12,6 +12,10 @@ jobs:
       xcode: "15.0.0"
     resource_class: macos.m1.large.gen1
     steps:
+      - macos/list-permission-types
+      - macos/add-permission:
+          bundle-id: "com.apple.dt.Xcode"
+          permission-type: "kTCCServiceMicrophone"
       - macos/preboot-simulator:
           device: "iPhone SE (3rd generation)"
           platform: "iOS"
