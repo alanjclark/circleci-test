@@ -14,7 +14,7 @@ jobs:
     steps:
       - macos/list-permission-types
       - macos/add-permission:
-          bundle-id: "com.apple.dt.Xcode"
+          bundle-id: "com.apple.iphonesimulator"
           permission-type: "kTCCServiceMicrophone"
       - macos/preboot-simulator:
           device: "iPhone SE (3rd generation)"
