@@ -5,9 +5,9 @@ orbs:
 
 jobs:
   build:
-    # parameters:
-    #   runs:
-    #     type: integer
+    parameters:
+      runs:
+        type: integer
     macos:
       xcode: "15.0.0"
     resource_class: macos.m1.large.gen1
